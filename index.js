@@ -46,7 +46,7 @@ async function main() {
             // H) Yo cliente, cifro el mensaje usando el sharedSecret (obtenido de Kyber) con AES-256-GCM.
             // AES-256-GCM requires a 256-bit (32-byte) key, which sharedSecret is.
             // It also requires an Initialization Vector (IV), which should be unique for each encryption with the same key.
-            const iv = crypto.randomBytes(32); // 12 bytes is recommended for GCM.
+            const iv = crypto.randomBytes(16); // 12 bytes is recommended for GCM.
             const cipher = crypto.createCipheriv('aes-256-gcm', sharedSecret, iv);
 
             let encryptedMessage = cipher.update(messageToEncrypt);
@@ -63,7 +63,7 @@ async function main() {
 
 
 
-
+            //   <<<<<<<< Conterpart >>>>>>>>>
             ///>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
